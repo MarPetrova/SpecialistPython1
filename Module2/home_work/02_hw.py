@@ -8,3 +8,12 @@
 # Например, 1 корова, 2 коровы, 5 коров, 125 коров.
 
 # TODO: your code here
+n=int(input("n:"))
+check_number1=n-n//10*10
+check_number2=n-n//100*100
+if check_number1==1 and check_number2!=11:
+    print(n,"корова")
+elif check_number1>1 and check_number1<5 and check_number2!=12 and check_number2!=13 and check_number2!=14:
+    print(n,"коровы")
+else:
+    print(n,"коров")
