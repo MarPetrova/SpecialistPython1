@@ -4,10 +4,21 @@
 
 # При решении задачи необходимо использовать функцию расстояния между двумя точками.
 
-def distance(x1, y1, x2, y2):
-    # TODO: тело, которое вы реализовали на практической работе
-    pass
+def xy_line(x1, y1, x2, y2): #расстояние между точками на плоскости
+    dist = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+    return dist
 
+def distance(x1, y1, x2, y2, x3, y3): #минимальная длина для 3 координат
+    distAB=xy_line(x1,y1,x2,y2)
+    distBC=xy_line(x2,y2,x3,y3)
+    distAC=xy_line(x1,y1,x3,y3)
+    min_dist=min(distAB,distBC,distAC)
+    if min_dist==distAB:
+       res="AB"
+    elif min_dist==distBC:
+        res="BC"
+    else:
+        res="AC"
+    return res
 
-# TODO: your code here
-print("Самый короткий отрезок:", ...)  # Выводим название отрезка, например “АС”.
+print("Самый короткий отрезок: ", distance(1,1,2,1,3,3))
