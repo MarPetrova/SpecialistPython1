@@ -2,3 +2,16 @@
 # Находится ли одна окружность целиком внутри другой
 
 # TODO: your code here
+def xy_line(x1, y1, x2, y2): #расстояние между точками на плоскости
+    dist = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+    return dist
+
+def circles(x1, y1, x2, y2, r1, r2): #проверить если окружности в друг друге
+    dist_bw_centers=xy_line(x1, y1, x2,y2)
+    if (dist_bw_centers + min(r1,r2)) < max(r1,r2):
+        res = "Одна окружность целиком внутри другой"
+    else:
+        res = "Одна окружность не находится целиком внутри другой"
+    return res
+
+print(circles(5,5,4,5,3,1))
