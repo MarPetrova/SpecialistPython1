@@ -1,4 +1,3 @@
-# Данные о товарах на складе хранятся в словаре
 items = [
     {
         "name": "Кроссовки",
@@ -31,15 +30,14 @@ items = [
         "price": 1700
     },
 ]
-# Найдите:
-print("Товары на складе представлены брэндами: ")
 
-# TODO: your code here
+brands = []
+for key in items:
+    brands.append(key["brand"])
+print("Товары на складе представлены брэндами: ", set(brands))
 
-print("На складе больше всего товаров брэнда(ов): ")
-
-# TODO: your code here
-
-print("На складе самый дорогой товар брэнда(ов): ")
-
-# TODO: your code here
+max_price = items[0]
+for key in items:
+    if key["price"] > max_price["price"]:
+        max_price=key
+print("На складе самый дорогой товар брэнда(ов): ", f"{max_price['brand']}")
